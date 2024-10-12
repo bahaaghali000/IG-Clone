@@ -1,0 +1,51 @@
+{
+  "login": {
+    "usernameInput": "اسم المستخدم أو البريد الاكتروني",
+    "passwordInput": "كلمه السر",
+    "signline": " أليس لديك حساب؟",
+    "signupButton": "تسجيل",
+    "submitBtn": "تسجيل الدخول",
+    "forgotPassword": "نسيت كلمة السر؟"
+  },
+  "signup": {
+    "emailInput": "البريد الاكتروني",
+    "fullnameInput": "الاسم بالكامل",
+    "usernameInput": "اسم المستخدم",
+    "passwordInput": "كلمه السر",
+    "loginLine": "هل لديك حساب؟",
+    "loginButton": "تسجيل الدخول",
+    "submitBtn": "التسجيل",
+    "signupDesc": "انشئ حساب للستخدم خدمتنا"
+  },
+  "sidebar": {
+    "home": "الصفحة الرئيسية",
+    "search": "بحث",
+    "explore": "استكشاف",
+    "messages": "الرسائل",
+    "notifications": "الاشعارات",
+    "create": "انشاء",
+    "profile": "الملف الشخصي",
+    "more": "المزيد",
+    "logout": "تسجيل الخروج"
+  },
+  "forgotPassword": {
+    "title": "هل تواجه مشكلة في تسجيل الدخول؟",
+    "description": "أدخل البريد الإلكتروني أو رقم الهاتف أو اسم المستخدم وسنرسل إليك رابطًا للعودة إلى حسابك.",
+    "inputPlaceholder": "البريد الإلكتروني",
+    "submitBtn": "إرسال رابط تسجيل الدخول",
+    "or": "او",
+    "createNewAccount": "أنشاء حساب جديد",
+    "returnToLogin": "عودة الي تسجيل الدخول"
+  },
+  "Feed": {
+    "title": "اقتراحات قد تعجبك",
+    "seeMore": "عرض الكل",
+    "follow": "متابعة",
+    "follower": "متابع"
+  },
+  "Profile": {
+    "followers": "المتابعون",
+    "following": "تابعون",
+    "posts": "المنشورات"
+  }
+}

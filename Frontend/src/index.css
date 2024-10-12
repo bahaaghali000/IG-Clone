@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.rtl {
+  direction: rtl;
+}
+
+.ltr {
+  direction: ltr;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: black;
+  /* @apply bg-[#f1f1f1] dark:bg-red-950; */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  /* @apply bg-[#f1f1f1] dark:bg-red-950; */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  /* @apply bg-[#f1f1f1] dark:bg-red-950; */
+}
+
+#root {
+  @apply dark:bg-black dark:text-white bg-white text-black;
+}
+
+.logo {
+  background-image: url("https://static.cdninstagram.com/rsrc.php/v3/yM/r/8n91YnfPq0s.png");
+  background-position: 0px -52px;
+  background-size: auto;
+  width: 175px;
+  height: 51px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+
+.sidebar__logo {
+  background-image: url("https://static.cdninstagram.com/rsrc.php/v3/yM/r/8n91YnfPq0s.png");
+  background-position: 0px -52px;
+  background-size: auto;
+  width: 175px;
+  height: 51px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  scale: 0.7;
+}
+
+.dark .sidebar__logo {
+  background-position: 0px 0px;
+}
+
+.profile__post div {
+  display: none;
+  /* width: calc(100% / 3) !important; */
+}
+.profile__post:hover {
+  opacity: 0.7;
+}
+.profile__post:hover div {
+  display: block;
+  /* background-color: black;
+  opacity: 0.5; */
+  /* opacity: 1; */
+  /* z-index: 10; */
+}
+
+.text__description {
+  @apply text-[12px] text-[#737373];
+}
+
+.form__input {
+  @apply border mb-2 w-full p-2 rounded relative;
+}
+
+.form__label {
+  @apply text-gray-500 select-none  text-sm absolute transition-all;
+}
+
+.submit__btn {
+  @apply w-full text-center bg-blue-500 text-white font-semibold mt-4 px-2 py-2 rounded-lg;
+}
+
+.disabled__btn {
+  @apply pointer-events-none select-none opacity-30;
+}
+
+.loader {
+  width: 20px;
+  aspect-ratio: 1;
+  display: grid;
+  border-radius: 50%;
+  background: linear-gradient(
+        0deg,
+        rgba(180, 179, 179, 0.5) 30%,
+        #fcfcfc00 0 70%,
+        rgb(255, 255, 255) 0
+      )
+      50%/8% 100%,
+    linear-gradient(
+        90deg,
+        rgba(192, 190, 190, 0.25) 30%,
+        #6e6e6e00 0 70%,
+        rgba(255, 255, 255, 0.75) 0
+      )
+      50%/100% 8%;
+  background-repeat: no-repeat;
+  animation: l23 1s infinite steps(12);
+}
+.loader::before,
+.loader::after {
+  content: "";
+  grid-area: 1/1;
+  border-radius: 50%;
+  background: inherit;
+  opacity: 0.915;
+  transform: rotate(30deg);
+}
+.loader::after {
+  opacity: 0.83;
+  transform: rotate(60deg);
+}
+@keyframes l23 {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+.link {
+  @apply text-[#0095f6] hover:hover:text-[#2b74a5] dark:hover:text-[#f5f5f5] cursor-pointer;
+}
+
+.messages {
+  height: calc(100% - 140px);
+}
+.accordion {
+  background-color: transparent !important;
+  color: inherit !important;
+}
+.MuiAccordionSummary-expandIconWrapper {
+  color: inherit !important;
+}
+
+.border-bottom {
+  @apply border-b border-b-gray-300 border-opacity-100 dark:border-b-white dark:border-opacity-25;
+}
+
+.border-left {
+  @apply border-l border-l-gray-300 border-opacity-100 dark:border-l-white dark:border-opacity-25;
+}
+
+.border-right {
+  @apply border-r border-r-gray-300 border-opacity-100 dark:border-r-white dark:border-opacity-25;
+}
+
+.border-top {
+  @apply border-t border-t-gray-300 border-opacity-100 dark:border-t-white dark:border-opacity-25;
+}
+
+.full-border {
+  @apply border border-gray-300 border-opacity-100 dark:border-white dark:border-opacity-25;
+}
+
+.MuiDialog-paper {
+  @apply bg-white text-black dark:bg-[#262626] dark:text-white;
+}
+
+.dialog__alert-item {
+  @apply text-center block text-sm cursor-pointer dark:hover:bg-[#222222] hover:bg-gray-200 border-top p-2;
+}
+
+/* Hide the default clear button on the search input */
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
