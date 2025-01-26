@@ -19,25 +19,17 @@ const signToken = (id) => {
 };
 
 const register = asyncErrorHandler(async (req, res, next) => {
-  const { email, username, fullname, password } = req.body;
-
-  // if (!email || !username || !fullname || !password) {
-  //   return res.json({
-  //     status: "failed",
-  //     message: "All fields are required for registration",
-  //   });
-  // }
+  const { email, username } = req.body;
 
   const user = await User.findOne({
     $or: [{ email }, { username }],
   });
-
   if (user)
     return next(new AppError("username or email is already exists", 400));
 
   const newUser = await User.create(req.body);
 
-  const token = await signToken(newUser._id);
+  const token = signToken(newUser._id);
 
   res.cookie("access_token", token, cookieOptions);
 
@@ -91,7 +83,7 @@ const login = asyncErrorHandler(async (req, res, next) => {
 
 const logout = asyncErrorHandler(async (req, res) => {
   res.clearCookie("access_token");
-  res.status(200).json({ message: "Logout successful" });
+  res.status(200).json({ message: "Logout successfully" });
 });
 
 const forgotPassword = asyncErrorHandler(async (req, res, next) => {
