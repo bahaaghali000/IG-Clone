@@ -15,12 +15,6 @@ const commentSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
     },
-    likes: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User",
-      },
-    ],
     totalLikes: {
       type: Number,
       default: 0,
@@ -30,6 +24,8 @@ const commentSchema = new mongoose.Schema(
     timestamps: true,
   }
 );
+
+commentSchema.index({ totalLikes: 1 });
 
 const Comment = mongoose.model("Comment", commentSchema);
 

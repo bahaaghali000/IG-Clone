@@ -21,12 +21,6 @@ const postSchema = new mongoose.Schema(
       type: Number,
       default: 0,
     },
-    savedBy: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User",
-      },
-    ],
   },
   {
     timestamps: true,
@@ -35,14 +29,7 @@ const postSchema = new mongoose.Schema(
   }
 );
 
-postSchema.methods.hasLiked = async function (userId) {
-  const postLike = await this.model("PostLike").findOne({
-    post: this._id,
-    likeMaker: userId,
-  });
-
-  return !!postLike;
-};
+postSchema.index({ totalLikes: 1 });
 
 postSchema.virtual("comments", {
   ref: "Comment",
@@ -55,35 +42,6 @@ postSchema.virtual("likes", {
   localField: "_id",
   foreignField: "post",
 });
-
-// postSchema.pre(/^find/, async function (next) {
-//   this.populate({
-//     path: "author",
-//     match: { isPrivate: false },
-//   });
-
-//   next();
-// });
-postSchema.post(/^find/, async function (docs, next) {
-  // console.log(docs);
-  // this => query
-  // const isPriavte = await this.model("Post")
-  //   .findById(this._id)
-  //   .select("author");
-
-  // this.find({$nor: {}});
-  // console.log(isPriavte);
-  // console.log(this.author);
-
-  next();
-});
-
-// userSchema.post(/^find/, function (docs, next) {
-//   // this => query
-
-//   console.log(docs);
-//   next();
-// });
 
 const Post = mongoose.model("Post", postSchema);
 

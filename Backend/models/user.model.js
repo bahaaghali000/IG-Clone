@@ -28,7 +28,6 @@ const userSchema = new mongoose.Schema(
     },
     bio: {
       type: String,
-      default: "",
     },
     avatar: {
       type: String,
@@ -41,14 +40,9 @@ const userSchema = new mongoose.Schema(
     },
     gender: {
       type: String,
+      required: true,
       enum: ["male", "female"],
     },
-    // closeFriends: [
-    //   {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: "User",
-    //   },
-    // ],
 
     passwordChangedAt: Date,
     passwordResetToken: String,
